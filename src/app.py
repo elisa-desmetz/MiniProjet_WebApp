@@ -44,22 +44,40 @@ def zer():
 
 @app.route('/redirect-heroku/')
 def redirection_heroku():
+    """
+    Redirige vers le site de Heroku
+    """
     return redirect("https://www.heroku.com/")
 @app.route('/redirect-flask/')
 def redirection_flask():
+    """
+    Redirige vers le site de Flask
+    """
     return redirect("https://flask.palletsprojects.com/en/1.1.x/")
 @app.route('/redirect-docker/')
 def redirection_docker():
+    """
+    Redirige vers le site de docker
+    """
     return redirect("https://www.docker.com/")
 @app.route('/redirect-bootstrap/')
 def redirection_bootstrap():
+    """
+    Redirige vers le site de Bootstrap
+    """
     return redirect("https://getbootstrap.com/")
 @app.route('/redirect-jinja/')
 def redirection_jinja():
+    """
+    Redirige vers le site de jinja
+    """
     return redirect("https://jinja.palletsprojects.com/en/2.11.x/")
 
 @app.route('/favicon.ico')
 def favicon():
+    """
+    Récupère le chemin d'accès de la favicon
+    """
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'img/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
