@@ -19,24 +19,39 @@ def home():
     return render_template("index.html")
 
 @app.route('/projets/')
-@app.route('/projets/projet-1/')
-@app.route('/projets/projet-2/')
-@app.route('/projets/projet-3/')
 def projets():
+    """
+    Affiche la page des projets
+    """
+    return render_template("projets.html")
+@app.route('/projets/projet-1/')
+def projet_1():
+    """
+    Affiche la page des projets
+    """
+    return render_template("projets.html")
+@app.route('/projets/projet-2/')
+def projet_2():
+    """
+    Affiche la page des projets
+    """
+    return render_template("projets.html")
+@app.route('/projets/projet-3/')
+def projet_3():
     """
     Affiche la page des projets
     """
     return render_template("projets.html")
 
 @app.route('/contact/')
-def aze():
+def contact():
     """
     Affiche la page de contact
     """
     return render_template("main.html")
 
 @app.route('/about/')
-def zer():
+def about():
     """
     Affiche la page "A propos"
     """

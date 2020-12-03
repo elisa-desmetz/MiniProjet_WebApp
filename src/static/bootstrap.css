@@ -2,6 +2,10 @@
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
+body {
+    background-color: #dedede;
+}
+
 main > .container {
     padding: 60px 15px 0;
 }
