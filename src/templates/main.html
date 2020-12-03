@@ -41,7 +41,7 @@
                     <a class="nav-link" href="../../home">Home </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link {% if request.path == " /projets/projet-1/" or "/projets/projet-2/" or "/projets/projet-3/" %}active{% endif %} dropdown-toggle" href="../../projets" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link {% if request.path == (" /projets/projet-1/" or "/projets/projet-2/" or "/projets/projet-3/" ) %}active{% endif %} dropdown-toggle" href="../../projets" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Projets<span class="sr-only">(current)</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -57,19 +57,24 @@
                     <a class="nav-link {% if request.path == " /about/" %}active{% endif %}" href="../../about" tabindex="-1">About</a>
                 </li>
             </ul>
+            <span class="navbar-text">
+                Navbar text with an inline element
+            </span>
         </div>
     </nav>
     {%- endblock navbar -%}
     {%- block main -%}
     {# main content placeholder #}
+    {{request.path}}
     {%- endblock main -%}
     {%- block footer -%}
-    <footer class="footer fixed-bottom mt-auto py-3 row justify-content-between">
-        <div class="container col-3">
-            <span class="text-muted">Running on <a href="https//www.heroku.com">Heroku</a></span>
+    <footer class="footer fixed-bottom mr-auto py-3 row justify-content-between align-items-center">
+        <div class="container col-auto mr-auto">
+            <span class="text-muted">Powered by <a href="../../redirect-heroku" target="_blank">Heroku<br/></a></span>
+            <span class="text-muted">Running with <a href="../../redirect-flask" target="_blank">Flask</a> and <a href="../../redirect-docker" target="_blank">Docker</a></span>
         </div>
-        <div class="container col-2">
-            <span class="text-muted">Place sticky footer content here.</span>
+        <div class="container col-auto">
+            <span class="text-muted">Designed and built with <a href="../../redirect-bootstrap" target="_blank">Bootstrap</a> and <a href="../../redirect-jinja" target="_blank">Jinja2</a></span>
         </div>
     </footer>
     {%- endblock footer -%}

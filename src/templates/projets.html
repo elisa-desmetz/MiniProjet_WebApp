@@ -10,7 +10,7 @@
     {%- endblock bootstrap -%}
     {%- block navbar -%}{{super()}}{%- endblock navbar -%}
     {%- block main -%}
-    adgf
+    {{request.path}}
     {%- endblock main -%}
     {%- block footer -%}{{super()}}{%- endblock footer -%}
 </body>
