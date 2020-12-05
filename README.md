@@ -1,10 +1,10 @@
 # MiniProjet_WebApp
 Mini-projet application web Master 1 H3 HiTeMa</br>
-Application accessible ‡ <a href="http://my-portfolio-edesmetz.herokuapp.com/">http://my-portfolio-edesmetz.herokuapp.com/</a>.
+Application accessible √† <a href="http://my-portfolio-edesmetz.herokuapp.com/">http://my-portfolio-edesmetz.herokuapp.com/</a>.
 ## Objectif
-Mise en place de mon portfolio qui prÈsentera :
+Mise en place de mon portfolio qui pr√©sentera :
 - Mes projets
-- Mon profil avec un lien vers mes rÈseaux sociaux
+- Mon profil avec un lien vers mes r√©seaux sociaux
 - Un formulaire de contact
 
 ## Routes disponibles
@@ -30,5 +30,12 @@ Retourne la page ```about.html```</br>
 Methode : GET
 ### Route "/redirect/\<string:url>/"</br>
 Fonction ```redirection_externe(url)``` </b>
-Redirige vers la page rÈfÈrencÈe par la variable ```url```
-Dans le cas ou la variable rÈfÈrencÈe n'est pas listÈe, redirige vers la page "/home/"
+Redirige vers la page r√©f√©renc√©e par la variable ```url```
+Dans le cas ou la variable r√©f√©renc√©e n'est pas list√©e, redirige vers la page "/home/"
+
+## Ressources
+### Images
+Les images de type icones sont disponibles dans ```/src/img```.
+Les images personnelles sont h√©erg√©es en externe.
+### Fichiers
+Les fichiers personnels sont h√©berg√©s en externe.
