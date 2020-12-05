@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, redirect, url_for, request
 from flask import render_template
 import os
@@ -5,6 +6,8 @@ from markupsafe import escape
 app = Flask(__name__)
 port = int(os.environ.get("PORT",5000))
 
+
+# Gestion routing interne
 @app.route('/')
 def redirection():
     """
@@ -24,77 +27,47 @@ def projets():
     Affiche la page des projets
     """
     return render_template("projets.html")
-@app.route('/projets/projet-1/')
-def projet_1():
-    """
-    Affiche la page des projets
-    """
-    return render_template("projets.html")
-@app.route('/projets/projet-2/')
-def projet_2():
-    """
-    Affiche la page des projets
-    """
-    return render_template("projets.html")
-@app.route('/projets/projet-3/')
-def projet_3():
-    """
-    Affiche la page des projets
-    """
-    return render_template("projets.html")
-
 @app.route('/contact/')
 def contact():
     """
     Affiche la page de contact
     """
-    return render_template("main.html")
+    return render_template("contact.html")
 
 @app.route('/about/')
 def about():
     """
     Affiche la page "A propos"
     """
-    return render_template("main.html")
+    return render_template("about.html")
 
-@app.route('/redirect-heroku/')
-def redirection_heroku():
+@app.route('/redirect/<string:url>')
+def redirection_externe(url=None):
     """
-    Redirige vers le site de Heroku
+    Redirige vers une URL externe en fonction du paramètre d'entrée
     """
-    return redirect("https://www.heroku.com/")
-@app.route('/redirect-flask/')
-def redirection_flask():
-    """
-    Redirige vers le site de Flask
-    """
-    return redirect("https://flask.palletsprojects.com/en/1.1.x/")
-@app.route('/redirect-docker/')
-def redirection_docker():
-    """
-    Redirige vers le site de docker
-    """
-    return redirect("https://www.docker.com/")
-@app.route('/redirect-bootstrap/')
-def redirection_bootstrap():
-    """
-    Redirige vers le site de Bootstrap
-    """
-    return redirect("https://getbootstrap.com/")
-@app.route('/redirect-jinja/')
-def redirection_jinja():
-    """
-    Redirige vers le site de jinja
-    """
-    return redirect("https://jinja.palletsprojects.com/en/2.11.x/")
+    url = url
+    if url=="heroku":
+        return redirect("https://www.heroku.com/")
+    elif url=="flask":
+        return redirect("https://flask.palletsprojects.com/en/1.1.x/")
+    elif url=="docker":
+        return redirect("https://www.docker.com/")
+    elif url=="bootstrap":
+        return redirect("https://getbootstrap.com/")
+    elif url=="jinja":
+        return redirect("https://jinja.palletsprojects.com/en/2.11.x/")
+    elif url=="projet-1":
+        return redirect("https://hatespeech-streamlit-app.herokuapp.com/")
+    if url=="github":
+        return redirect("https://github.com/elisa-desmetz")
+    if url=="linkedin":
+        return redirect("https://www.linkedin.com/in/elisa-desmetz/")
+    if url=="linkedin":
+        return redirect("https://www.aht.li/3568204/Desmetz_Elisa_CV.pdf")
+    else :
+        return redirect(url_for('home'))
 
-@app.route('/favicon.ico')
-def favicon():
-    """
-    Récupère le chemin d'accès de la favicon
-    """
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'img/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)

@@ -1,0 +1,44 @@
+{%- extends "main.html" -%}
+<head>
+    <meta charset="UTF-8">
+    {%- block head -%}
+    {{super()}}
+    {%- endblock head -%}
+</head>
+<body>
+    {%- block bootstrap -%}
+    {{super()}}
+    {%- endblock bootstrap -%}
+    {%- block navbar -%}{{super()}}{%- endblock navbar -%}
+    {%- block main -%}
+    <div class="container">
+        <form>
+            <div class="form-row">
+                <h1 class="text-center">Me contacter</h1>
+            </div>
+            <div class="form-row mt-4">
+                <div class="form-group col">
+                    <label for="eFormControlInput1">Adresse Mail</label>
+                    <input type="email" class="form-control" id="FormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="col form-group">
+                    <label for="FormControlInput2">Identit&eacute;</label>
+                    <input type="text" class="form-control" id="FormControlInput2" placeholder="Nom Pr&eacute;nom">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="FormControlTextarea">Votre Message</label>
+                    <textarea class="form-control" id="FormControlTextarea" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="form-row mb-4">
+                <div class="form-group col">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {%- endblock main -%}
+    {%- block footer -%}{{super()}}{%- endblock footer -%}
+</body>

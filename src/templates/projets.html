@@ -1,7 +1,8 @@
 {%- extends "main.html" -%}
 <head>
+    <meta charset="UTF-8">
     {%- block head -%}
-        {{super()}}
+    {{super()}}
     {%- endblock head -%}
 </head>
 <body>
@@ -12,106 +13,39 @@
     {%- block main -%}
     <div class="container-sm mt-3 mb-3 overflow-auto">
         <!-- row 1-->
-        <div class="row mt-3">
+        <div class="row row-cols-1 row-cols-md-3">
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='img/streamlit-illu.svg') }}" class="card-img-top" alt="img">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title"><span class="st">Sentiment analysis </span><span class="badge badge-secondary">En cours</span></h5>
+                        <p class="card-text text-justify"><strong>[Streamlit]</strong><br /> Algorithme d'analyse de sentiment sur des discours haineux.<br /> D&eacute;velopp&eacute; en Python avec la biblioth&egrave;que Streamlit.<br/> D&eacute;ploy&eacute; sur Heroku.</p>
+                        <a href={{url_for('redirection_externe',url="projet-1")}} class="btn btn-primary" target="_blank">Voir le projet</a>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='img/placeholder-image.png') }}" class="card-img-top" alt="placeholder" style="background-color:#a3a3a3;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Projet 2</h5>
+                        <p class="card-text">Work in progress.</p>
+                        <a href="#" class="btn btn-primary disabled">Go somewhere</a>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
+                <div class="card h-100" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='img/placeholder-image.png') }}" class="card-img-top" alt="placeholder" style="background-color:#a3a3a3;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- row 2-->
-        <div class="row mt-3">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Projet 3</h5>
+                        <p class="card-text">Work in progress.</p>
+                        <a href="#" class="btn btn-primary disabled">Go somewhere</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- row 3-->
-        <div class="row mt-3">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- row 2 place holder-->
     </div>
     {%- endblock main -%}
     {%- block footer -%}{{super()}}{%- endblock footer -%}

@@ -3,7 +3,7 @@
 <head>
     {%- block head -%}
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
@@ -31,8 +31,8 @@
     -->
     {%- endblock bootstrap -%}
     {%- block navbar -%}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Mon Projet</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href={{url_for('home')}}>Mon portfolio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,27 +40,21 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('home')}}">Home </a>
+                    <a class="nav-link" href={{url_for('home')}}>Home </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link {% if (request.path == '/projets/projet-1/') or (request.path == '/projets/projet-2/') or (request.path == '/projets/projet-3/') %}active{% endif %} dropdown-toggle" href={{url_for('projets')}} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projets<span class="sr-only">(current)</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="yellow dropdown-item {% if request.path == '/projets/projet-1/' %}active{% endif %}" href={{url_for('projet_1')}}>Projet 1</a>
-                        <a class="dropdown-item {% if request.path == '/projets/projet-2/' %}active{% endif %}" href={{url_for('projet_2')}}>Projet 2</a>
-                        <a class="dropdown-item {% if request.path == '/projets/projet-3/' %}active{% endif %}" href={{url_for('projet_3')}}>Projet 3</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/projets/' %}active{% endif %}" href={{url_for('projets')}}>Projets</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href={{url_for('contact')}}>Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{{url_for('about')}}" tabindex="-1">About</a>
+                    <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href={{url_for('about')}} tabindex="-1">About</a>
                 </li>
             </ul>
             <span class="navbar-text">
-                Navbar text with an inline element
+                <a class="mr-3" href="{{url_for('redirection_externe',url="linkedin")}}" target="_blank"><img src="{{ url_for('static', filename='img/linkedin.svg') }}"  style="height: 1.5em; filter:invert(100%) grayscale(800%);" alt="linkedin icon" /></a>
+                <a href="{{url_for('redirection_externe',url="github")}}" target="_blank"><img src="{{ url_for('static', filename='img/github.svg') }}" style="height:1.5em; filter: invert(100%) grayscale(800%);" alt="github icon" /></a>
             </span>
         </div>
     </nav>
@@ -71,11 +65,11 @@
     {%- block footer -%}
     <footer class="footer fixed-bottom mr-auto py-3 row justify-content-between align-items-center">
         <div class="container col-auto mr-auto">
-            <span class="text-muted">Powered by <a href="../../redirect-heroku" target="_blank">Heroku<br/></a></span>
-            <span class="text-muted">Running with <a href="../../redirect-flask" target="_blank">Flask</a> and <a href="../../redirect-docker" target="_blank">Docker</a></span>
+            <span class="text-muted">Powered by <a href={{url_for('redirection_externe',url="heroku")}} target="_blank">Heroku<br/></a></span>
+            <span class="text-muted">Running with <a href={{url_for('redirection_externe',url="flask")}} target="_blank">Flask</a> and <a href={{url_for('redirection_externe',url="docker")}} target="_blank">Docker</a></span>
         </div>
         <div class="container col-auto">
-            <span class="text-muted">Designed and built with <a href="../../redirect-bootstrap" target="_blank">Bootstrap</a> and <a href="../../redirect-jinja" target="_blank">Jinja2</a></span>
+            <span class="text-muted">Designed and built with <a href={{url_for('redirection_externe',url="boostrap")}} target="_blank">Bootstrap</a> and <a href={{url_for('redirection_externe',url="jinja")}} target="_blank">Jinja2</a></span>
         </div>
     </footer>
     {%- endblock footer -%}
