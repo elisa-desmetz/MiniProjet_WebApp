@@ -63,8 +63,10 @@ def redirection_externe(url=None):
         return redirect("https://github.com/elisa-desmetz")
     if url=="linkedin":
         return redirect("https://www.linkedin.com/in/elisa-desmetz/")
-    if url=="linkedin":
+    if url=="cv":
         return redirect("https://www.aht.li/3568204/Desmetz_Elisa_CV.pdf")
+    if url=="git-1":
+        return redirect("https://github.com/elisa-desmetz/StreamlitApp_AlgoSentiment")
     else :
         return redirect(url_for('home'))
 
